@@ -2,9 +2,9 @@
 Create pods, Service and LoadBalancer
 
 
-Create a pod Nginx image : kubectl run nginx-pod --image=nginx:latest
-watch pod creating : kubectl get pods –watch
-describe a pod :  kubectl describe pod  PodName
+- Create a pod Nginx image : kubectl run nginx-pod --image=nginx:latest
+- watch pod creating : kubectl get pods –watch
+- describe a pod :  kubectl describe pod  PodName
 edit a pode Yaml: kubectl edit pod nginx-pod   -> abre o yaml do pod criado
 delete a pod :    kubectl delete pod nginx-pod
 get a pods : kubectl get pods
