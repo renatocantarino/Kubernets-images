@@ -1,5 +1,14 @@
 # Kubernets-images
-Create pods, Service and LoadBalancer
+
+
+
+
+![alt text](https://github.com/renatocantarino/Kubernets-images/blob/main/img/kube.png)
+
+
+
+
+Create pods, Service, LoadBalancer and ConfigMaps
 
 
 - Create a pod Nginx image : kubectl run nginx-pod --image=nginx:latest
