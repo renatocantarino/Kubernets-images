@@ -1,0 +1,25 @@
+#kubectl get replicasets
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database-noticias-deployment
+
+spec:
+  template:
+    metadata:
+      name: database-noticias
+      labels:
+        app: database-noticias
+    spec:
+      containers:
+        - name: database-container
+      image: docker.io/aluracursos/sistema-noticias:1
+      ports:
+        - containerPort: 80
+      envFrom:
+        - configMapRef:
+            name: database-configmap
+  replicas: 1 #default
+  selector:
+    matchLabels:
+      app: database-noticias #deve ser igual ao labels
