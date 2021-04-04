@@ -29,11 +29,11 @@ Create pods, Service, LoadBalancer and ConfigMaps
 --------
 Deployments
 
-kubectl apply -f nginx-deployment.yaml --record   : set a change cause action
-kubectl get deployments   : get all deployments
-kubectl rollout history deployment   : get all versions deployment containers
-kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="versao latest"   : add a update description
-kubectl describe pod nginx-deployment-6645687878-c7b4p   : describe a specific pod by ID
-kubectl rollout undo deployment nginx-deployment --to-revision=1 : rollback to specific control version
+- kubectl apply -f nginx-deployment.yaml --record   : set a change cause action
+- kubectl get deployments   : get all deployments
+- kubectl rollout history deployment   : get all versions deployment containers
+- kubectl annotate deployment nginx-deployment kubernetes.io/change-cause="versao latest"   : add a update description
+- kubectl describe pod nginx-deployment-6645687878-c7b4p   : describe a specific pod by ID
+- kubectl rollout undo deployment nginx-deployment --to-revision=1 : rollback to specific control version
 
 
