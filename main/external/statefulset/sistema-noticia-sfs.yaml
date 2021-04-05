@@ -23,6 +23,13 @@ spec:
             mountPath: /var/www/html/uploads
           - name: sessao
             mountPath: /tmp
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80 #porta do container
+          periodSeconds: 30 #segundos
+          failureThreshold: 3 #Numero de tentivas
+          initialDelaySeconds: 50 #atraso inicial para inicar os testes, pois pode estar criando
     volumes:
       - name: imagens
         PersistentVolumeClaim:
@@ -35,6 +42,4 @@ spec:
     matchLabels:
       app: sistema-noticias
   serviceName: svc-sistema-noticias
-
-
   #cria primeiro o pvc depois os statefulset

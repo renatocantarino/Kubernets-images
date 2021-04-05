@@ -19,6 +19,23 @@ spec:
       envFrom:
         - configMapRef:
             name: portal-configmap
+      livenessProbe:
+        httpGet:
+          path: / #alguma rota da aplicação
+          port: 80 #porta do container
+        periodSeconds: 30 #segundos
+        failureThreshold: 3 #Numero de tentivas
+        initialDelaySeconds: 50 #atraso inicial para inicar os testes, pois pode estar criando
+      readinessProbe:
+        httpGet:
+          path: /inserir_noticias.php #alguma rota da aplicação
+          port: 80 #porta do container
+        periodSeconds: 30 #segundos
+        failureThreshold: 3 #Numero de tentivas
+        initialDelaySeconds: 50 #atraso inicial para inicar os testes, pois pode estar criando
+      resources:
+        requests:
+          cpu: 10m  #10 milicore
   replicas: 3
   selector:
     matchLabels:
